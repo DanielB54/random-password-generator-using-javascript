@@ -1,43 +1,34 @@
 // Assignment Code
-// password can have uppercase letters
+// password can contain uppercase letters
+
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-console.log(upperCase);
+
 // password can contain lowrcase letters
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-console.log(lowerCase);
+
 // password can contain numbers
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(numbers);
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+var generateBtn
 // password can contain special characters
-var specialCharacters = ["!", ",", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/" , ":", ";", "<", "=", ">", "?", "@", "[", "\", \"]", "^", "_", "`", "{", "|", "}", "~"]
-console.log(specialCharacters);
+var specialCharacters = ["!", ",", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/" , ":", ";", "<", "=", ">", "?", "@", "[", "\", \"]", "^", "_", "`", "{", "|", "}", "~"];
 
+var passwordLength
 // password length must be no less than 8 characters and no more than 128 characters
-prompt("Please enter a password length no less than 8 and no more than 128.");
+document.getElementById("generate").onclick = function() {
+passwordLength = prompt("Please enter your desired password length, no less than 8 characters and no greater than 128 characters.");
 
-function returnText() {
-  let input = document.getElementById("userInput").value;
-  alert(input);
-  // if (userInput != >=8 ) {
-    // return;
-  // } else {
-    
-  // }
-}
+if (passwordLength <=7 || passwordLength >=129) {
+   alert("Please enter a number no less than 8 and no greater than 128. Click Generate Password button to try again.");
+} else {
+alert("Your input was accepted");
+};};
 
+function upperCase () {
+  confirm("would you like your password to contain uppercase characters?")
+};
 
-
-// prompt user for password length and store in a variable
-
-
-
-
-function generatePassword() {
-  
-
-  // validate input meets acceptable criteria
-}
-
+console.log(passwordLength)
 var generateBtn = document.querySelector("#generate");
 
 
