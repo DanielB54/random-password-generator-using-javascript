@@ -125,31 +125,50 @@ function generatePassword() {
   );
 
   if (wantsUpperCase) {
-    characters.concat(upperCase);
+   characters = characters.concat(upperCase);
   }
   console.log(characters);
   let wantsLowerCase = confirm(
     "Would you like your password to contain lowercase letters?"
   );
   if (wantsLowerCase) {
-    characters.concat(lowerCase);
+   characters = characters.concat(lowerCase);
   }
 
   let wantsNumbers = confirm(
     "Would you like your password to contain numbers?"
   );
   if (wantsNumbers) {
-    characters.concat(numbers);
+   characters = characters.concat(numbers);
   }
 
   let wantsSpecial = confirm(
     "Would you like your password to contain special characters?"
   );
   if (wantsSpecial) {
-    characters.concat(specialCharacters);
+  characters = characters.concat(specialCharacters);
   }
 
-  return "X";
+  if (!characters.length) {
+    alert("please select at least one character value.")
+    return;
+  }
+
+var password = "";
+
+for (var i = 0; i < passwordLength; i++) {
+  var item = characters[Math.floor(Math.random()*characters.length)];
+
+  password += item;
+
+
+
+}
+
+
+
+console.log()
+  return password;
 }
 
 // Write password to the #password input
