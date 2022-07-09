@@ -11,25 +11,49 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var generateBtn
 // password can contain special characters
-var specialCharacters = ["!", ",", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/" , ":", ";", "<", "=", ">", "?", "@", "[", "\", \"]", "^", "_", "`", "{", "|", "}", "~"];
+var specialCharacters = ["!", ",", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/" , ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 var passwordLength
 // password length must be no less than 8 characters and no more than 128 characters
-document.getElementById("generate").onclick = function() {
+function generatePassword() {
 passwordLength = prompt("Please enter your desired password length, no less than 8 characters and no greater than 128 characters.");
 
-if (passwordLength <=7 || passwordLength >=129) {
-   alert("Please enter a number no less than 8 and no greater than 128. Click Generate Password button to try again.");
-} else {
-alert("Your input was accepted");
-};};
+passwordLength = parseInt(passwordLength);
 
-function upperCase () {
-  confirm("would you like your password to contain uppercase characters?")
-};
 
-console.log(passwordLength)
-var generateBtn = document.querySelector("#generate");
+if (passwordLength === "" || isNaN(passwordLength) || passwordLength <=7 || passwordLength >=129) {
+  alert("Please enter a number no less than 8 and no greater than 128. Click Generate Password button to try again.");
+  return;
+}
+
+ {
+let wantsUpperCase; 
+
+if (confirm("would you like your password to contain uppercase letters?") == true) {
+  wantsUpperCase + upperCase
+}
+
+
+let wantsLowerCase; 
+if (confirm("Would you like your password to contain lowercase letters?") == true) {
+  wantsLowerCase + password + lowerCase
+}
+
+let wantsNumbers; 
+if (confirm("Would you like your password to contain numbers?") == true) {
+  wantsNumbers + password + numbers
+}
+
+let wantsSpecial;
+if (confirm("Would you like your password to contain special characters?") == true) {
+  wantsSpecial + password
+}
+console.log(wantsSpecial)
+console.log(specialCharacters)
+}
+
+return wantsUpperCase};
+
 
 
 // Write password to the #password input
@@ -44,4 +68,5 @@ function writePassword() {
 // print password in display box
 
 // Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
